@@ -7,5 +7,6 @@ dt = pd.read_csv(path_to_csv, usecols=['InvoiceNo', 'StockCode', 'Description', 
 
 display(dt)
 
-dt2 = dt['product_type'] = dt['StockCode'].str[0]
+dt['product_type'] = dt['StockCode'].str[0]
+dt[dt['product_type'].str.contains(r'[0-9]', regex=True)]
 print("Fin")
